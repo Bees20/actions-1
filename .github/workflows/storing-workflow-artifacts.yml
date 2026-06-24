@@ -23,12 +23,12 @@ jobs:
         needs: build-job
         runs-on: ubuntu-latest
         steps:
-            - name: Test File Exists
-              run: grep -i "Dragon" dragon.txt
             - name: Download ASCII Art Artifact
               uses: actions/download-artifact@v7
               with:
                 name: dragon-artifact
+            - name: Test File Exists
+              run: grep -i "Dragon" dragon.txt
     deploy-job:
         needs: Test-job
         runs-on: ubuntu-latest
