@@ -24,7 +24,7 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - name: Test File Exists
-              run: grep -i "dragon" dragon.txt
+              run: grep -i "Dragon" dragon.txt
             - name: Download ASCII Art Artifact
               uses: actions/download-artifact@v7
               with:
