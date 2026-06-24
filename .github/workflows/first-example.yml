@@ -8,11 +8,16 @@ jobs:
         steps:
             - name: Checkout Repository
               uses: actions/checkout@v7
-            - name: Welcome Message
-              run: echo "My first workflow action"
+            #- name: Welcome Message
+            #  run: echo "My first workflow action"
 
-            - name: List files
-              run: ls
+            #- name: List files
+            #  run: ls
               
-            - name: View readme file
-              run: cat README.md
+            #- name: View readme file
+            #  run: cat README.md
+            - name: Welcome Message
+              run: |
+                echo "My second workflow action"
+                ls -la
+                cat README.md
