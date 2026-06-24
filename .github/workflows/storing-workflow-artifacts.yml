@@ -15,7 +15,7 @@ jobs:
             - name: Generate ASCII Art
               run: cowsay -f dragon "Dragon says cow cow" > dragon.txt
             - name: Upload ASCII Art as Artifact
-              uses: actions/upload-artifact@v3
+              uses: actions/upload-artifact@v7
               with:
                 name: dragon-artifact
                 path: dragon.txt
@@ -26,7 +26,7 @@ jobs:
             - name: Test File Exists
               run: grep -i "dragon" dragon.txt
             - name: Download ASCII Art Artifact
-              uses: actions/download-artifact@v3
+              uses: actions/download-artifact@v7
               with:
                 name: dragon-artifact
     deploy-job:
@@ -34,7 +34,7 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - name: Download ASCII Art Artifact
-              uses: actions/download-artifact@v3
+              uses: actions/download-artifact@v7
               with:
                 name: dragon-artifact
             - name: Read file
