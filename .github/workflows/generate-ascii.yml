@@ -1,0 +1,25 @@
+name: Generate ASCII Art
+
+on: push
+
+jobs:
+    ascii_job:
+        runs-on: ubuntu-latetst
+        steps:
+            - name: Checkout Repository
+              uses: actions/checkout@v7
+            
+            - name: Install cowsay
+              run: sudo apt-get install -y cowsay
+
+            - name: Generate ASCII Art
+              run: cowsay -f dragon "Welcome to my first workflow action!" > dragon.txt
+
+            - name: Test File Exists
+              run: grep -i "dragon" dragon.txt
+
+            - name: Read file
+              run: cat dragon.txt
+
+            - name: Checkout Repo Files
+              run: ls -ltra
