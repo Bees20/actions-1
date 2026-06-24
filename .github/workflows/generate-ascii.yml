@@ -4,7 +4,7 @@ on: push
 
 jobs:
     ascii_job:
-        runs-on: ubuntu-latetst
+        runs-on: ubuntu-latest
         steps:
             - name: Checkout Repository
               uses: actions/checkout@v7
