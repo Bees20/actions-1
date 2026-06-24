@@ -21,3 +21,6 @@ jobs:
                 echo "My second workflow action"
                 ls -la
                 cat README.md
+              
+            - name: Generate ASCII Art
+              run: cowsay -f dragon "Welcome to my first workflow action!" > dragon.txt
